@@ -26,9 +26,9 @@ async def verify_webhook(
     print("hub_mode:", hub_mode)
     print("hub_challenge:", hub_challenge)
     print("hub_verify_token:", hub_verify_token)
-    my_tkn = "atul-access-token"
+
     print("in verify_webhook")
-    if hub_mode == "subscribe" and hub_verify_token == my_tkn:
+    if hub_mode == "subscribe" and hub_verify_token == VERIFY_TOKEN:
         # Return as plain text to ensure Meta's validator accepts it
         print("sending resposne :",hub_challenge)
         return PlainTextResponse(content=hub_challenge)
